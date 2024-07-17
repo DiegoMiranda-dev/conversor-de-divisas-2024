@@ -13,7 +13,7 @@ public class Conversor {
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/8bcab61cd76cb5cfd66d4275/pair/" + source + "/" + target + "/" + amount);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest req = HttpRequest.newBuilder().uri(direccion).build();
-        HttpResponse<String> res = null;
+        HttpResponse<String> res;
         try {
             res = client.send(req, HttpResponse.BodyHandlers.ofString());
             System.out.println("Conversión hecha con éxito c:");
