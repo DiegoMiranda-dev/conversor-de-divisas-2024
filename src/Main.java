@@ -30,37 +30,17 @@ public class Main {
 
 
 
-            Conversor conv = null;
+            Conversor conv = switch (opcion) {
+                case 1 -> new Conversor("MXN", "USD", cantidad);
+                case 2 -> new Conversor("USD", "MXN", cantidad);
+                case 3 -> new Conversor("MXN", "EUR", cantidad);
+                case 4 -> new Conversor("EUR", "MXN", cantidad);
+                case 5 -> new Conversor("MXN", "JPY", cantidad);
+                case 6 -> new Conversor("JPY", "MXN", cantidad);
+                default -> null;
+            };
 
 
-            switch (opcion) {
-
-                case 1:
-
-                    conv = new Conversor("MXN", "USD", cantidad);
-                    break;
-
-                case 2:
-                    conv = new Conversor("USD", "MXN", cantidad);
-                    break;
-
-                case 3:
-                    conv = new Conversor("MXN", "EUR", cantidad);
-                    break;
-
-                case 4:
-                    conv = new Conversor("EUR", "MXN", cantidad);
-                    break;
-
-                case 5:
-                    conv = new Conversor("MXN", "JPY", cantidad);
-                    break;
-
-                case 6:
-                    conv = new Conversor("JPY", "MXN", cantidad);
-                    break;
-
-            }
         } while (opcion != 0);
 
 
